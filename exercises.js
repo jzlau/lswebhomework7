@@ -163,6 +163,7 @@ function wordsToSentence(words) {
   //   }
   //     }
 
+
   var a = words.join(' ');
   return a;
 }
@@ -170,21 +171,59 @@ function wordsToSentence(words) {
 function contains(arr, item) {
   //check to see if item is inside of arr
   //return true if it is, otherwise return false
+
+
+  // var a = arr.includes(item);
+  // return a;
+
+  var b= arr.indexOf(item) > -1;
+  return b;
 }
 
 function addNumbers(numbers) {
   //numbers is an array of integers.
   //add all of the integers and return the value
-}
+  function getSum(total,num){
+    return total + num;
+  }
+  var a = numbers.reduce(getSum);
+  return a;
+    }
+
 
 function averageTestScore(testScores) {
   //testScores is an array.  Iterate over testScores and compute the average.
   //return the average
+
+var sum = 0;
+for (var i=0; i< testScores.length; i++ ){
+  sum += parseInt(testScores[i]) ;
+}
+
+var avg = sum/testScores.length;
+return avg;
+
 }
 
 function largestNumber(numbers) {
   //numbers is an array of integers
   //return the largest integer
+//   var n1=
+//   for (var i =0; i < numbers; i++)
+//   { if(numbers[i]> i){
+//   return 
+
+// numbers.map(function(ageVar) {
+
+// }
+
+// var a = arr.map(function(plusone) {
+//   return (plusone+1);
+
+  var max = numbers.reduce(function(a,b){
+    return Math.max(a,b);
+  });
+  return max;
 }
 
 function makeCat(name, age) {
@@ -192,7 +231,16 @@ function makeCat(name, age) {
   //add an age property to the object with the value set to the age argument
   //add a method called meow that returns the string 'Meow!'
   //return the object
+
+var newCat = {
+  name: name,
+  age:  age,
+ meow: function meow() {return 'Meow!';}
+};
+
+  return newCat;
 }
+
 
 function addProperty(object, property) {
   //add the property to the object with a value of null
